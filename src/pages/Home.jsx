@@ -33,14 +33,14 @@
     console.log(books);
 
     const [inputValue, setValue] = useState('')
-    const [SearchResult, setSearchResults] = useState(books)
+    // const [SearchResult, setSearchResults] = useState(books)
 
-    const results =  
-      books.filter((user) =>
-        user.book.toLowerCase().includes(inputValue)
-      )
+    // const results =  
+    //   books.filter((user) =>
+    //     user.book.toLowerCase().includes(inputValue)
+    //   )
        
-    setSearchResults(results);
+    // setSearchResults(results);
 
     function SerachChange(e) {
       setSearch({
@@ -126,7 +126,7 @@
         </div>
         <div className="BooksContainer">
           {books ? (
-            SearchResult.map((item) => (
+            books.map((item) => (
               <CardBook item={item.book} deletBook={deletBook} key={item.book.id} spinner={spinner} />
             ))
           ) : (
