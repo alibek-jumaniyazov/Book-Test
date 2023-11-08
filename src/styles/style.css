@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Kanit&family=Montserrat:wght@400;600&family=Mulish:wght@300;500;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bg.png);
+    background-repeat: no-repeat;
+    background-size: 70%;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 76%;
+    margin: auto;
+}
+
+.none {
+    display: none;
+}

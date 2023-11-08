@@ -1,0 +1,34 @@
+.notFountPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 100px auto;
+}
+
+.errorButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 72px;
+}
+.outBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    height: 40px;
+    padding: 10px, 24px, 10px, 24px;
+    border-radius: 4px;
+    background: #6200EE;
+    color: #FEFEFE;
+}
+
+.solidBtn {
+    border: 1px solid #6200EE;
+    background:  transparent;
+    color: #6200EE;
+}
