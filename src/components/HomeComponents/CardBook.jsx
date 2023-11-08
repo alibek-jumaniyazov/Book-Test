@@ -1,7 +1,4 @@
-import axios from 'axios'
 import React, { useState } from 'react'
-import { deleteBook } from '../../context/api'
-import { useNavigate } from 'react-router-dom'
 
 export default function CardBook({ item , deletBook , spinner}) {
 
