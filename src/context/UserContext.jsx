@@ -9,12 +9,17 @@ const UserProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        setLoading(true)
+
         const getBooks = async () => {
             const allBooksInfo = await allBooks();
             setBooks(allBooksInfo.data)
+            setLoading(false)
         }
         getBooks();
     }, [])
+
+
 
     const values = {
         books,
@@ -22,7 +27,6 @@ const UserProvider = ({ children }) => {
         loading,
         setLoading
     }
-
     return (
         <UserContext.Provider value={values}>
             {children}

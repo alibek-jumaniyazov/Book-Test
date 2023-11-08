@@ -5,7 +5,6 @@ axios.defaults.baseURL = "https://0001.uz"
 
 axios.interceptors.request.use(
     (config) => {
-
         const method = config.method
         const url = config.url
         const body = JSON.stringify(config.data)

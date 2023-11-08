@@ -19,9 +19,6 @@ export default function CardBook({ item , deletBook , spinner}) {
         }
     }
 
-    const navigate = useNavigate()
-  
-
 return (
     <div className='MainBookCard' >
         <div key={item.id}  className={`CardBook ${bookClass}`} onClick={() => OpenEdit()}>

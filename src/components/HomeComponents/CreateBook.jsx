@@ -7,12 +7,14 @@ import ModalDialog from '@mui/joy/ModalDialog';
 import { postBook } from '../../context/api';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
+import toast, { Toaster } from 'react-hot-toast';
 export default function CreateBook() {
 
     const [layout, setLayout] = useState(undefined);
     const [spinner, setSpinner] = useState('none');
 
     const isbnRef = useRef(null)
+    
     const { books, setBooks } = useContext(UserContext);
 
     const CreateBooks = async () => {
@@ -23,18 +25,21 @@ export default function CreateBook() {
             setSpinner('spinner')
         }
         try {
-            const response = await postBook(body)
             if (body.isbn !== '') {
+                const response = await postBook(body)
                 setLayout(undefined)
-                console.log(response.data);
+                console.log(response.data.data);
                 setSpinner('none')
+                toast.success("Yangi kitob muvofaqiyatli qo'shildi!")
             }
             else {
                 alert("Kitobni ISBN kodini yozing")
+                toast.error('Yangi kitob yaratilmadi')
             }
         }
         catch (err) {
             console.log(err);
+
         }
     }
 
@@ -95,11 +100,15 @@ export default function CreateBook() {
                         </div>
                         <div className="modalButtons">
                             <Button onClick={() => setLayout(undefined)} style={{ background: '#fff', border: '1px solid #6200EE', width: '181px', height: '40px', color: '#6200EE' }} variant="outlined" >Close</Button>
-                            <Button onClick={() => CreateBooks()} style={{ background: '#6200EE', border: 'none', width: '181px', height: '40px', color: '#fff' }} variant="contained"> <a>Submit</a> <div class={spinner}></div></Button>
+                            <Button onClick={() => CreateBooks()} style={{ background: '#6200EE', border: 'none', width: '181px', height: '40px', color: '#fff' }} variant="contained"> Submit <div class={spinner}></div></Button>
                         </div>
                     </div>
                 </ModalDialog>
             </Modal>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
         </>
     )
 }
