@@ -4,6 +4,8 @@ import google from '../../images/Google.png';
 import { signUp } from '../../context/api';
 import { useNavigate } from 'react-router-dom';
 
+
+
 export default function Login() {
   const navigate = useNavigate();
   

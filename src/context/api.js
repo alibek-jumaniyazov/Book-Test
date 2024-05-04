@@ -1,7 +1,7 @@
 import axios from "axios";
 import md5 from "md5";
 
-axios.defaults.baseURL = "https://0001.uz"
+axios.defaults.baseURL = "https://no23.lavina.tech";
 
 axios.interceptors.request.use(
     (config) => {
